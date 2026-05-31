@@ -1,3 +1,6 @@
+server:
+  port: 8081
+
 spring:
   application:
     name: exchange-service
@@ -12,20 +15,14 @@ spring:
     hibernate:
       ddl-auto: create-drop
     database-platform: org.hibernate.dialect.H2Dialect
-    show-sql: true
 
   h2:
     console:
-      enabled: true
-      path: /h2-console
-
-server:
-  port: 8081  # porta diferente do product-service (8080)
+      enabled: false
 
 exchange:
   api:
-    # AwesomeAPI - gratuita, sem necessidade de chave
-    base-url: https://economia.awesomeapi.com.br/json/last
+    base-url: ${EXCHANGE_API_BASE_URL:https://economia.awesomeapi.com.br/json/last}
 
 management:
   endpoints:
