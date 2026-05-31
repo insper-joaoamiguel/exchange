@@ -26,3 +26,9 @@ exchange:
   api:
     # AwesomeAPI - gratuita, sem necessidade de chave
     base-url: https://economia.awesomeapi.com.br/json/last
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
